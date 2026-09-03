@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Launch Whisperer Side Panel</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; background: #121212; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+    .card { background: #1e1e1e; border: 1px solid #333; border-radius: 16px; padding: 36px; text-align: center; max-width: 440px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+    h1 { font-size: 20px; margin-bottom: 10px; }
+    p { font-size: 14px; color: #aaa; margin-bottom: 24px; line-height: 1.5; }
+    .btn { background: #1a73e8; color: #fff; font-weight: 600; font-size: 15px; padding: 14px 28px; border-radius: 8px; border: none; cursor: pointer; transition: background 0.2s; }
+    .btn:hover { background: #1557b0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div style="font-size: 48px; margin-bottom: 16px;">📱</div>
+    <h1>Launch Whisperer Side Panel</h1>
+    <p id="status-msg">Launching the Whisperer Executive Dashboard as a neat, vertical right-hand side panel window...</p>
+    <button class="btn" onclick="openSidePanelAndClose()">🚀 Open in Side Panel Window</button>
+  </div>
+  <script>
+    function openSidePanelAndClose() {
+      const left = window.screen.availWidth - 460;
+      const popup = window.open('whisperer_single_file.html', 'WhispererSidePanel', 'width=450,height=880,left=' + left + ',top=30,resizable=yes,scrollbars=yes,status=no,menubar=no,toolbar=no,location=no');
+      if (popup) {
+        document.getElementById('status-msg').innerHTML = '<span style="color:#34a853; font-weight:600;">✅ Side Panel Window Opened! Closing launcher...</span>';
+        setTimeout(() => {
+          try { window.close(); } catch(e) {}
+        }, 300);
+      } else {
+        document.getElementById('status-msg').innerHTML = '<span style="color:#f2994a;">⚠️ Pop-up blocked by browser on auto-launch. Please click the button below:</span>';
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(openSidePanelAndClose, 150);
+    });
+  </script>
+</body>
+</html>
