@@ -3,9 +3,9 @@ A real-time assistant for speakers during live virtual meetings. It listens to s
 
 ---
 
-## 📦 What's Inside the Package (`Whisperer (Web App`)
+## 📦 What's Inside the Package (`Whisperer')
 
-When you unzip `Whisperer (Web App).zip`, you will see the following key files:
+Key files:
 - **`launcher.html`**: The 1-click pop-out launcher. Double-click this to open the dashboard formatted as a neat, narrow vertical Side Panel window docked right next to your meeting.
 - **`whisperer_single_file.html`**: The complete, standalone single-file dashboard (no external servers or setup required). Can be opened directly in any browser.
 - **`README.md`**: This quick-start deployment guide.
